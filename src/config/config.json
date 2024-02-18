@@ -1,0 +1,117 @@
+{
+    "app": {
+        "name": "Aerodis Space"
+    },
+    "routes": {
+        "web": {
+            "landing": [
+                {
+                    "name": "Home",
+                    "path": "/",
+                    "component": "Landing/Home.vue",
+                    "icon": "fa-solid fa-house",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "Home"
+                    }
+                },
+                {
+                    "name": "About",
+                    "path": "/about",
+                    "component": "Landing/About.vue",
+                    "icon": "fa-solid fa-info",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "About"
+                    }
+                },
+                {
+                    "name": "Downloads",
+                    "path": "/downloads",
+                    "component": "Landing/Downloads.vue",
+                    "icon": "fa-solid fa-info",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "Downloads"
+                    }
+                }
+            ]
+        },
+        "app": {
+            "auth": {
+                "role": {
+                    "freeuser": [],
+                    "premiumuser": [],
+                    "developer": [],
+                    "admin": []
+                }
+            },
+            "free": [
+                {
+                    "name": "Home",
+                    "path": "/",
+                    "component": "App/Home.vue",
+                    "icon": "fa-solid fa-house",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "Home"
+                    }
+                },
+                {
+                    "name": "Settings",
+                    "path": "/settings",
+                    "component": "App/Settings.vue",
+                    "icon": "fa-solid fa-gear",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "Settings"
+                    }
+                },
+                {
+                    "name": "Login",
+                    "path": "/auth",
+                    "component": "App/Auth.vue",
+                    "icon": "fa-solid fa-right-to-bracket",
+                    "sidebar": false,
+                    "meta": {
+                        "title": "Auth"
+                    }
+                }
+            ]
+        }
+    },
+    "themes": [
+        "light",
+        "dark",
+        "cupcake",
+        "bumblebee",
+        "emerald",
+        "corporate",
+        "synthwave",
+        "retro",
+        "cyberpunk",
+        "valentine",
+        "halloween",
+        "garden",
+        "forest",
+        "aqua",
+        "lofi",
+        "pastel",
+        "fantasy",
+        "wireframe",
+        "black",
+        "luxury",
+        "dracula",
+        "cmyk",
+        "autumn",
+        "business",
+        "acid",
+        "lemonade",
+        "night",
+        "coffee",
+        "winter",
+        "dim",
+        "nord",
+        "sunset"
+    ]
+}
