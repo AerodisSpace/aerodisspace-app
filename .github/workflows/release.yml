@@ -6,7 +6,7 @@ on:
     - main
 
 jobs:
-    Desktop:
+    Desktop-Web-Builds:
         strategy:
             fail-fast: false
             matrix:
@@ -52,7 +52,7 @@ jobs:
                 aws-region: us-east-1
             
             - name: Copy Desktop Bundle to S3
-              run: aws s3 sync ./bundle s3://aerodis.space/${{ matrix.settings.platform }}
+              run: aws s3 sync ./src-tauri/target/release/bundle/. s3://aerodis.space/${{ matrix.settings.platform }}
 
             - name: Copy Web Bundle to S3
               # This condition is just to running a unique time
