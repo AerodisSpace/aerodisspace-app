@@ -15,7 +15,7 @@
 <script lang="ts">
 import { Component, Vue, toNative } from 'vue-facing-decorator'
 // @ts-ignore
-import config from "../config/config.json"
+import config from "../../config/config.json"
 //@ts-ignore
 @Component({
 })

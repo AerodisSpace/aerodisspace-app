@@ -9,7 +9,7 @@
 import { Component, Vue, toNative } from 'vue-facing-decorator'
 import { Vue3Lottie } from 'vue3-lottie'
 //@ts-ignore
-import loader_plane from "../assets/lottie/loader_plane.json"
+import loader_plane from "../../assets/lottie/loader_plane.json"
 @Component({
     components: { Vue3Lottie }
 })

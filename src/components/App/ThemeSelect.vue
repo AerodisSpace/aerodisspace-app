@@ -31,3 +31,4 @@ class ThemeSelect extends Vue {
 }
 export default toNative(ThemeSelect)
 </script>
+../../config/config.json

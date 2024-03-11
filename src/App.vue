@@ -18,7 +18,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue, toNative } from 'vue-facing-decorator'
-import WrapperApp from './components/WrapperApp.vue';
+import WrapperApp from './components/App/WrapperApp.vue';
 import { Vue3Lottie } from 'vue3-lottie'
 //@ts-ignore
 import background from "./assets/lottie/background.json"

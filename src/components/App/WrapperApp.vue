@@ -72,7 +72,7 @@
 <script lang="ts">
 import { Component, Vue, toNative } from 'vue-facing-decorator'
 //@ts-ignore
-import config from "../config/config.json"
+import config from "../../config/config.json"
 import SideBarPages from './SideBarPages.vue'
 @Component({
     components: { SideBarPages }
@@ -86,3 +86,4 @@ class WrapperApp extends Vue {
 }
 export default toNative(WrapperApp)
 </script>
+../../config/config.json
