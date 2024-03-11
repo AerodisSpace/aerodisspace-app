@@ -8,7 +8,7 @@
                 {
                     "name": "Home",
                     "path": "/",
-                    "component": "Landing/Home.vue",
+                    "component": "Home",
                     "icon": "fa-solid fa-house",
                     "sidebar": true,
                     "meta": {
@@ -18,7 +18,7 @@
                 {
                     "name": "About",
                     "path": "/about",
-                    "component": "Landing/About.vue",
+                    "component": "About",
                     "icon": "fa-solid fa-info",
                     "sidebar": true,
                     "meta": {
@@ -28,7 +28,7 @@
                 {
                     "name": "Downloads",
                     "path": "/downloads",
-                    "component": "Landing/Downloads.vue",
+                    "component": "Downloads",
                     "icon": "fa-solid fa-info",
                     "sidebar": true,
                     "meta": {
@@ -50,7 +50,7 @@
                 {
                     "name": "Home",
                     "path": "/",
-                    "component": "App/Home.vue",
+                    "component": "Home",
                     "icon": "fa-solid fa-house",
                     "sidebar": true,
                     "meta": {
@@ -60,7 +60,7 @@
                 {
                     "name": "Settings",
                     "path": "/settings",
-                    "component": "App/Settings.vue",
+                    "component": "Settings",
                     "icon": "fa-solid fa-gear",
                     "sidebar": true,
                     "meta": {
@@ -70,7 +70,7 @@
                 {
                     "name": "Login",
                     "path": "/auth",
-                    "component": "App/Auth.vue",
+                    "component": "Auth",
                     "icon": "fa-solid fa-right-to-bracket",
                     "sidebar": false,
                     "meta": {

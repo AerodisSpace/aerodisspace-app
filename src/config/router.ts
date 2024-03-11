@@ -2,8 +2,12 @@ import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 //@ts-ignore
 import config from './config.json'
 
-async function lazy_component(component_path: string) {
-    return await import(/* @vite-ignore */`../Pages/${component_path}`)
+async function lazy_component(component_path: string, landing: boolean = false) {
+    if (landing)
+        return await import(`../Pages/Landing/${component_path}.vue`)
+    else
+        return await import(`../Pages/App/${component_path}.vue`)
+
 }
 
 function dynamic_routes(): RouteRecordRaw[] {
@@ -29,7 +33,7 @@ function dynamic_routes(): RouteRecordRaw[] {
             return {
                 path: (r as any).path,
                 name: r.name,
-                component: () => lazy_component(r.component),
+                component: () => lazy_component(r.component, true),
                 meta: r.meta,
 
             }
