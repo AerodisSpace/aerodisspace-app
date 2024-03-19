@@ -6,10 +6,10 @@ plugins {
 
 android {
     compileSdk = 33
-    namespace = "com.aerodis.app"
+    namespace = "com.aerodis.aerodisspace_app"
     defaultConfig {
         manifestPlaceholders["usesCleartextTraffic"] = "false"
-        applicationId = "com.aerodis.app"
+        applicationId = "com.aerodis.aerodisspace_app"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

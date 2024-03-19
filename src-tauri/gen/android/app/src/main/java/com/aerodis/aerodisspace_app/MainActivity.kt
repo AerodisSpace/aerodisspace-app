@@ -1,3 +1,3 @@
-package com.aerodis.app
+package com.aerodis.aerodisspace_app
 
 class MainActivity : TauriActivity()

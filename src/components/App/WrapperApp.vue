@@ -80,10 +80,8 @@ import SideBarPages from './SideBarPages.vue'
 class WrapperApp extends Vue {
     public config: any = config
     public page(page: string): void {
-        console.log('oi');
         this.$router.push(page)
     }
 }
 export default toNative(WrapperApp)
 </script>
-../../config/config.json
