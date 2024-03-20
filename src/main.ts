@@ -11,6 +11,7 @@ import store from "./store/store";
 
 import Toast, { POSITION } from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import { is_mobile_platform } from "./config/config_os";
 
 
 async function main() {
@@ -33,6 +34,12 @@ async function main() {
     let theme = localStorage.getItem('theme') || 'dracula'
     const html_doc = document.querySelector("html")
     html_doc!.setAttribute("data-theme", theme);
+
+    const mobile = is_mobile_platform()
+    store.commit('SET_MOBILE', mobile)
+
 }
+
+
 
 await main()

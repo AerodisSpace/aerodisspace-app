@@ -4,7 +4,7 @@
             <input id="navbar-drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content h-full flex flex-col">
                 <!-- Navbar Desktop -->
-                <div class="w-full navbar bg-base-300">
+                <div class="w-full navbar bg-base-300 sticky top-0">
                     <div class="flex-none lg:hidden">
                         <label for="navbar-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -25,10 +25,10 @@
                     </div>
                 </div>
 
-                <div class="w-full h-full flex">
+                <div class="w-full h-[93vh] flex">
 
-                    <div class="hidden lg:flex flex-col bg-base-300 w-56">
-                        <ul class="menu h-full ">
+                    <div class="hidden lg:flex flex-col bg-base-300 w-56 justify-between">
+                        <ul class="menu">
                             <SideBarPages />
                         </ul>
                         <ul class="menu">
@@ -41,9 +41,7 @@
                         </ul>
                     </div>
                     <!-- Page content here -->
-                    <slot>
-
-                    </slot>
+                    <slot></slot>
                 </div>
 
             </div>
@@ -81,6 +79,8 @@ class WrapperApp extends Vue {
     public config: any = config
     public page(page: string): void {
         this.$router.push(page)
+        // @ts-ignore
+        document.getElementById('navbar-drawer').checked = false
     }
 }
 export default toNative(WrapperApp)

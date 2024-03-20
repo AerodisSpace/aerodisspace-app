@@ -2,25 +2,7 @@
     <div>
         <div class="w-full h-full grid grid-cols-1 lg:grid-cols-1 gap-10 p-4">
 
-            <div class="w-full h-full flex flex-col gap-4 p-4 rounded-box bg-base-300 shadow-md">
-                <div class="flex gap-4 items-center text-3xl font-bold">
-                    <span
-                        class="h-14 w-14 flex items-center justify-center rounded-box bg-neutral text-neutral-content">
-                        <i class="fa-brands fa-bluetooth-b"></i>
-                    </span>
-                    <span>Bluetooth Settings</span>
-                </div>
 
-                <div class="w-full text-sm">
-                    In this section, you can configure the Bluetooth settings for the application.
-                    For configure the controller device (embedded), you need connect the device to the computer. And
-                    then, you need configure the Wifi (ssid and password) for the device, as well
-                    the token generated when you create the aircraft in the platform.
-                    This token is used to authenticate the device in the platform. (JUST ONE TIME FOR EACH DEVICE)
-                </div>
-                <BluetoothEmbeddedSettings />
-
-            </div>
 
             <div class="w-full h-full flex flex-col gap-4 p-4 rounded-box bg-base-300 shadow-md">
                 <div class="flex gap-4 items-center text-3xl font-bold">
@@ -32,15 +14,8 @@
                 </div>
             </div>
 
-            <div class="w-full h-full flex flex-col gap-4 p-4 rounded-box bg-base-300 shadow-md">
-                <div class="flex gap-4 items-center text-3xl font-bold">
-                    <span
-                        class="h-14 w-14 flex items-center justify-center rounded-box bg-neutral text-neutral-content">
-                        <i class="fa-solid fa-microchip"></i>
-                    </span>
-                    <span>Embedded Settings</span>
-                </div>
-            </div>
+
+
 
             <div class="w-full h-full flex flex-col gap-4 p-4 rounded-box bg-base-300 shadow-md">
                 <div class="flex gap-4 items-center text-3xl font-bold">
@@ -52,6 +27,7 @@
                 </div>
                 <div class="w-full h-full grid grid-cols-1 p-2 gap-4">
 
+                    <!-- Theme -->
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn m-1">
                             Theme
@@ -70,8 +46,11 @@
 
                         </ul>
                     </div>
+                    <!-- Default Dir -->
+                    
                 </div>
             </div>
+
 
         </div>
     </div>
@@ -80,12 +59,7 @@
 import { Component, Vue, toNative } from 'vue-facing-decorator'
 // @ts-ignore
 import config from "../../config/config.json"
-import BluetoothEmbeddedSettings from "../../components/App/Settings/BluetoothEmbeddedSettings.vue"
-@Component({
-    components: {
-        BluetoothEmbeddedSettings
-    }
-})
+@Component({})
 class Settings extends Vue {
     public themes: string[] = config.themes
 

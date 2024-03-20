@@ -29,8 +29,10 @@ class SideBarPages
         // if (authenticated) 
     }
 
-    public page(page:string):void {
+    public page(page: string): void {
         this.$router.push(page)
+        // @ts-ignore
+        document.getElementById('navbar-drawer').checked = false
     }
 }
 export default toNative(SideBarPages

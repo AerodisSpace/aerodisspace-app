@@ -58,6 +58,16 @@
                     }
                 },
                 {
+                    "name": "Controller",
+                    "path": "/controller",
+                    "component": "Controller",
+                    "icon": "fa-solid fa-gamepad",
+                    "sidebar": true,
+                    "meta": {
+                        "title": "Aircraft Controller"
+                    }
+                },
+                {
                     "name": "Settings",
                     "path": "/settings",
                     "component": "Settings",

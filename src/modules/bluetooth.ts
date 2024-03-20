@@ -1,61 +1,39 @@
+import { invoke } from "@tauri-apps/api/core";
 import { useToast } from "vue-toastification";
 
 export default class BluetoothAerodisSpaceApp {
-    private _bt: Bluetooth | undefined | null = null;
-    public bt_connected: boolean = false;
+    public connected: boolean = false;
 
     constructor() {
 
-        let bt = navigator.bluetooth
-        if (!bt) {
-            this._error_msg()
+        invoke('ble_init').then((_) => { })
+        setInterval(() => {
+            this._update()
+        }, 500)
+    }
+
+    private async _update() {
+
+    }
+
+
+    public async connect(device_name: { name: string, address: string } | null | undefined) {
+        if (!device_name) {
+            useToast().error("No device name provided")
             return
         }
-        this._bt = bt
-
     }
 
-    private _error_msg() {
-        useToast().error("Bluetooth is not supported|available on this device. To use this app to connect to the embedded devices, please use a device that supports Bluetooth.");
-    }
+    public async scan_devices() {
+        try {
+            const devices = await invoke('ble_scan')
+            console.log(devices);
 
-    public async requestBT(filter: { name: string } | null | undefined): Promise<void> {
-        let bt_req_options: RequestDeviceOptions
-        if (filter)
-            bt_req_options = { filters: [filter] }
-        else
-            bt_req_options = { acceptAllDevices: true }
-        const doc = document.getElementById("bluetooth_start_btn")!
-
-        let bt = this._bt
-
-
-        doc.addEventListener('click', (event) => {
-            event.stopPropagation()
-            event.preventDefault()
-            if (bt) {
-                bt.requestDevice(bt_req_options).then((device: any) => {
-                    console.log(device);
-                    this.bt_connected = true;
-                    useToast().success("Bluetooth device connected successfully.");
-                })
-            }
-        })
-
-    }
-
-    public async getDevices(): Promise<BluetoothDevice[]> {
-        if (this._bt) {
-            const devices: BluetoothDevice[] | undefined = await this._bt?.getDevices()
-            if (devices) {
-                return devices;
-            } else {
-                return [];
-            }
-        } else {
-            this._error_msg();
-            return [];
+            return devices
+        } catch (_err) {
+            useToast().error("Error scanning for devices")
         }
     }
+
 
 }

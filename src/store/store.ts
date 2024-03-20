@@ -9,6 +9,10 @@ export default createStore({
         bluetooth: null
     },
     mutations: {
+        SET_MOBILE(state: any, payload: boolean) {
+            state.isMobile = payload
+        },
+
         SET_BLUETOOTH(state: any, payload: BluetoothAerodisSpaceApp) {
             state.bluetooth = payload
         }

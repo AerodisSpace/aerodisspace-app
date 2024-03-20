@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="w-screen h-screen overflow-y-auto overflow-x-hidden scrollbar-hidden">
-      <div class="fixed  -z-[1] opacity-[15%]">
-        <Vue3Lottie :animationData="animation" :scale="1" :speed="1" />
+      <div class="h-screen fixed -z-[1] opacity-[15%]" :class="{ 'rotate-90': isMobile }">
+        <Vue3Lottie :animationData="animation" :scale="scale" :speed="1" />
       </div>
 
       <WrapperApp class="w-full h-full flex flex-col">
@@ -29,6 +29,13 @@ import background from "./assets/lottie/background.json"
 })
 class App extends Vue {
   public animation: any = background
+  public scale: number = 1
+  mounted() {
+    // @ts-ignore 
+    if (this.isMobile) {
+      this.scale = 3
+    }
+  }
 }
 export default toNative(App)
 

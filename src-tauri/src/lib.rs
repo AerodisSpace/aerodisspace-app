@@ -1,16 +1,17 @@
+use ble::BleApp;
+use tauri::async_runtime::Mutex;
+
 pub mod ble;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        //State
+        .manage(Mutex::new(BleApp::new()))
         .plugin(tauri_plugin_shell::init())
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![ble::ble_init, ble::ble_scan,])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
